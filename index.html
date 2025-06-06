@@ -54,11 +54,17 @@
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
               <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-              <li class="scroll-to-section"><a href="#features">Funcionalidades</a></li>
+              <li class="scroll-to-section dropdown">
+                <a href="#features" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Funcionalidades</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#servicos-disponiveis">Serviços</a></li>
+                  <li><a class="dropdown-item" href="#cadastro-encontre">Cadastre-se</a></li>
+                </ul>
+              </li>
               <li class="scroll-to-section"><a href="#about">Sobre Nós</a></li>
               <li class="scroll-to-section"><a href="#contact">Contato</a></li>
             </ul>
-            <a class='menu-trigger'>
+            <a class='menu-trigger d-lg-none d-block'>
               <span>Menu</span>
             </a>
             <!-- ***** Menu End ***** -->
@@ -106,6 +112,129 @@
       </div>
     </div>
   </div>
+
+  <!-- Seção: Serviços Disponíveis -->
+  <section id="servicos-disponiveis" class="services section bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+            <h4>Serviços que você encontra aqui</h4>
+            <img src="assets/images/heading-line-dec.png" alt="">
+            <p>Praticidade, segurança e variedade em um só lugar. Confira alguns dos serviços disponíveis na nossa plataforma:
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="service-item first-service">
+            <div class="icon"><img src="assets/images/limpar_industria.png" alt="Limpeza" style="max-height:60px;"></div>
+            <h4>Limpeza Residencial e Empresarial</h4>
+            <p>Serviços de limpeza para casas, apartamentos, escritórios e empresas, realizados por profissionais qualificados.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="service-item ">
+            <div class="icon"><img src="assets/images/lavar_roupa.png" alt="Lavagem" style="max-height:60px;"></div>
+            <h4>Lavagem de Sofás, Colchões, Mantas e Roupas</h4>
+            <p>Cuidamos da higienização de estofados, roupas e outros itens, garantindo conforto e saúde para sua família.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="service-item ">
+            <div class="icon"><img src="assets/images/reparar.png" alt="Serviços Técnicos" style="max-height:60px;"></div>
+            <h4>Serviços Técnicos</h4>
+            <p>Encontre eletricistas, canalizadores, pintores, jardineiros e outros profissionais técnicos para manutenção e melhorias.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="service-item ">
+            <div class="icon"><img src="assets/images/aaa.png" alt="Serviços Domésticos" style="max-height:60px;"></div>
+            <h4>Serviços Domésticos</h4>
+            <p>Babás, cuidadores e outros profissionais para ajudar no cuidado com sua família e seu lar.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="service-item ">
+            <div class="icon"><img src="assets/images/j.png" alt="Transporte" style="max-height:60px;"></div>
+            <h4>Transporte e Remoção</h4>
+            <p>Transporte para mudanças, remoção de entulho, entregas e outros serviços logísticos com segurança e agilidade.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="service-item ">
+            <div class="icon"><img src="assets/images/service-icon-04.png" alt="E muito mais" style="max-height:60px;"></div>
+            <h4>E muito mais!</h4>
+            <p>Acesse a plataforma e descubra a variedade de serviços disponíveis para facilitar o seu dia a dia.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção: Quer começar, mas precisa de apoio? -->
+  <section id="apoio-prestador" class="services section bg-light py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-7">
+          <div class="section-heading text-center wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+            <h4>Tem habilidade, mas falta estrutura?</h4>
+            <img src="assets/images/heading-line-dec.png" alt="">
+            <p class="mb-4">Quer prestar serviços, mas ainda não tem equipamentos, estrutura ou condições ideais? Nós podemos te ajudar!</p>
+          </div>
+          <div class="service-item third-service text-center p-4 shadow-sm rounded bg-white">
+            <div class="icon mb-3"><img src="assets/images/service-icon-03.png" alt="Apoio" style="max-height:60px;"></div>
+            <p class="mb-4">A plataforma oferece suporte e orientação para quem deseja começar a atuar como prestador de serviços.<br>Não deixe que a falta de recursos seja um obstáculo para o seu crescimento profissional.</p>
+            <div class="text-button mt-2">
+              <a href="#contact" class="btn btn-warning btn-lg">Entre em contato e veja como podemos te ajudar <i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção: Você é prestador ou solicitante? -->
+  <section id="cadastro-encontre" class="services section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+            <h4>Cadastre-se ou encontre o que precisa</h4>
+            <img src="assets/images/heading-line-dec.png" alt="">
+            <p>Seja para contratar ou oferecer serviços, a nossa plataforma é o lugar certo para você!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 mb-4">
+          <div class="service-item first-service h-100">
+            <div class="icon"><img src="assets/images/service-icon-01.png" alt="Prestador" style="max-height:60px;"></div>
+            <h4>Para Prestadores de Serviço</h4>
+            <p>É um profissional e deseja oferecer seus serviços? <br><strong>Cadastre-se agora e aumente suas oportunidades!</strong></p>
+            <div class="text-button mt-3">
+              <a href="#">Clique aqui e veja como se cadastrar <i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 mb-4">
+          <div class="service-item second-service h-100">
+            <div class="icon"><img src="assets/images/service-icon-02.png" alt="Cliente" style="max-height:60px;"></div>
+            <h4>Para Clientes</h4>
+            <p>Está procurando um profissional? <br><strong>Encontre quem pode te ajudar de forma rápida e segura!</strong></p>
+            <div class="text-button mt-3">
+              <a href="#">Clique aqui e encontre um profissional <i class="fa fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <div id="features" class="services section">
     <div class="container">
@@ -248,95 +377,99 @@
       </div>
     </div>
 
-    <div id="developers" class="developers section">
+    <!-- Seção: Conheça os Estudantes Desenvolvedores -->
+    <section id="developers" class="services section">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 offset-lg-2">
-            <div class="section-heading wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+            <div class="section-heading wow fadeInDown text-center" data-wow-duration="1s" data-wow-delay="0.5s">
               <h4>Conheça os <em>Estudantes Desenvolvedores</em></h4>
               <img src="assets/images/heading-line-dec.png" alt="">
               <p>Por trás do McleaConnect, existe uma equipe de estudantes dedicados e apaixonados por tecnologia.</p>
             </div>
           </div>
         </div>
-      </div>
-
-      <div class="container">
-        <div class="d-flex flex-nowrap overflow-auto">
-
-          <div class="developer-item text-center me-4 p-3 border rounded">
-            <div><i class="bi bi-person-circle" style="font-size: 3rem;"></i></div>
-            <h4>Felton da Silva </h4>
-            <span>Fundador McleaConnect <br> Desenvolvedor de Software</span>
-            <p class="mb-1">Finalista de Engenharia Informática, com foco em desenvolvimento, suporte técnico e
-              cibersegurança.</p>
-            <a href="https://www.linkedin.com/in/feltondasilva/" target="_blank">LinkedIn</a>
-
-            <!-- Adicione o link do portfólio se disponível -->
+        <div class="row justify-content-center">
+          <!-- Fundadores -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="service-item first-service text-center h-100">
+              <div><i class="bi bi-person-circle" style="font-size: 3rem;"></i></div>
+              <h4>Felton da Silva</h4>
+              <span class="d-block mb-2"><strong>Fundador</strong> McleaConnect <br> Desenvolvedor de Software</span>
+              <p class="mb-1">Finalista de Engenharia Informática, com foco em desenvolvimento, suporte técnico e cibersegurança.</p>
+              <div class="text-button mt-2"><a href="https://www.linkedin.com/in/feltondasilva/" target="_blank">LinkedIn <i class="fa fa-arrow-right"></i></a></div>
+            </div>
           </div>
-
-          <div class="developer-item text-center me-4 p-3 border rounded">
-            <div><i class="bi bi-person-circle" style="font-size: 3rem;"></i></div>
-            <h4>Angelina Mafuca</h4>
-            <span>Colaboradora McleaConnect <br> Estudante de Engenharia</span>
-            <p class="mb-1">Proativa e determinada, busca impactar o mundo profissional com excelência e inovação.</p>
-            <a href="https://www.linkedin.com/in/angelina-mafuca-4b3b05316?trk=contact-info"
-              target="_blank">LinkedIn</a>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="service-item second-service text-center h-100">
+              <div><i class="bi bi-person-circle" style="font-size: 3rem;"></i></div>
+              <h4>Regino Mutolo</h4>
+              <span class="d-block mb-2"><strong>Fundador</strong> McleaConnect <br> Finalista de Engenharia</span>
+              <p class="mb-1">Guiado por valores como honestidade e visão de futuro, aspira empreender com propósito.</p>
+              <div class="text-button mt-2"><a href="https://www.facebook.com/regino.dosmutolo" target="_blank">Facebook <i class="fa fa-arrow-right"></i></a></div>
+            </div>
           </div>
-
-          <div class="developer-item text-center me-4 p-3 border rounded">
-            <div><i class="bi bi-person-circle" style="font-size: 3rem;"></i></div>
-            <h4>Faira Gulamo</h4>
-            <span>Colaboradora McleaConnect <br> Estudante e Empreendedora</span>
-            <p class="mb-1">Estudante do 3º ano de Engenharia, comprometida com inovação e crescimento profissional.</p>
-            <a href="https://www.facebook.com/fairagulamo.gulamo" target="_blank">LinkedIn</a>
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="service-item third-service text-center h-100">
+              <div><i class="bi bi-person-circle" style="font-size: 3rem;"></i></div>
+              <h4>Maria Letícia</h4>
+              <span class="d-block mb-2"><strong>Fundadora</strong> McleaConnect <br> Estudante de Engenharia</span>
+              <p class="mb-1">Acredito na tecnologia como uma ferramenta capaz de transformar vidas e criar oportunidades.</p>
+            </div>
           </div>
-
-
-          <div class="developer-item text-center me-4 p-3 border rounded">
-            <div><i class="bi bi-person-circle" style="font-size: 3rem;"></i></div>
-            <h4>Regino Mutolo</h4>
-            <span>Fundador McleaConnect <br> Finalista de Engenharia</span>
-            <p class="mb-1">Guiado por valores como honestidade e visão de futuro, aspira empreender com propósito.</p>
-            <a href="https://www.facebook.com/regino.dosmutolo" target="_blank">Facebook</a>
+        </div>
+        <div class="row justify-content-center mt-4">
+          <!-- Colaboradores -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="service-item fourth-service text-center h-100">
+              <div><i class="bi bi-person-circle" style="font-size: 3rem;"></i></div>
+              <h4>Angelina Mafuca</h4>
+              <span class="d-block mb-2">Colaboradora McleaConnect <br> Estudante de Engenharia</span>
+              <p class="mb-1">Proativa e determinada, busca impactar o mundo profissional com excelência e inovação.</p>
+              <div class="text-button mt-2"><a href="https://www.linkedin.com/in/angelina-mafuca-4b3b05316?trk=contact-info" target="_blank">LinkedIn <i class="fa fa-arrow-right"></i></a></div>
+            </div>
           </div>
-
-
-
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="service-item fifth-service text-center h-100">
+              <div ><i class="bi bi-person-circle" style="font-size: 3rem;"></i></div>
+              <h4>Faira Gulamo</h4>
+              <span class="d-block mb-2">Colaboradora McleaConnect <br> Estudante e Empreendedora</span>
+              <p class="mb-1">Estudante do 3º ano de Engenharia, comprometida com inovação e crescimento profissional.</p>
+              <div class="text-button mt-2"><a href="https://www.facebook.com/fairagulamo.gulamo" target="_blank">Facebook <i class="fa fa-arrow-right"></i></a></div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <!-- Seção de Comentários -->
-    <div id="comments" class="comments section py-5 bg-light">
+    </section>
+
+    <!-- Seção: Deixe seu Comentário -->
+    <section id="comments" class="services section bg-light py-5">
       <div class="container">
-        <div class="row mb-4">
+        <div class="row">
           <div class="col-lg-8 offset-lg-2">
-            <div class="section-heading text-center">
+            <div class="section-heading text-center wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
               <h4>Deixe seu <em>Comentário</em></h4>
               <img src="assets/images/heading-line-dec.png" alt="">
               <p>Compartilhe sua opinião ou experiência com o McleaConnect!</p>
             </div>
           </div>
         </div>
-        <div class="row">
+        <div class="row justify-content-center">
           <div class="col-lg-6 mb-4 mb-lg-0">
-            <form id="commentForm">
+            <form id="commentForm" class="bg-white p-4 rounded shadow-sm">
               <div class="mb-3">
                 <input type="text" id="commentName" class="form-control" placeholder="Seu nome" required>
               </div>
               <div class="mb-3">
-                <textarea id="commentText" class="form-control" rows="3" placeholder="Seu comentário"
-                  required></textarea>
+                <textarea id="commentText" class="form-control" rows="3" placeholder="Seu comentário" required></textarea>
               </div>
               <button type="submit" class="btn btn-primary w-100">Enviar Comentário</button>
             </form>
           </div>
           <div class="col-lg-6">
-            <div id="commentsList" class="bg-white p-3 rounded shadow-sm h-100"
-              style="min-height: 150px; max-height: 350px; overflow-y: auto;">
+            <div id="commentsList" class="bg-white p-4 rounded shadow-sm h-100" style="min-height: 150px; max-height: 350px; overflow-y: auto;">
               <!-- Comentários aparecerão aqui -->
             </div>
-            <!-- Pagination -->
             <nav aria-label="Page navigation" class="mt-3">
               <ul class="pagination justify-content-center">
                 <li class="page-item disabled" id="previousPage">
@@ -353,7 +486,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- Seção de Parceiros -->
     <div id="partners" class="partners section py-5">
@@ -561,6 +694,36 @@
       // Carregar comentários ao abrir a página
       document.addEventListener('DOMContentLoaded', loadComments);
     </script>
+    <style>
+      /* Garante que o dropdown funcione corretamente em telas pequenas */
+      @media (max-width: 991.98px) {
+        .main-nav .nav {
+          flex-direction: column;
+          width: 100%;
+        }
+
+        .main-nav .dropdown-menu {
+          position: static;
+          float: none;
+          background: #fff;
+          border: none;
+          box-shadow: none;
+          width: 100%;
+          margin: 0;
+          padding: 0.5rem 0;
+        }
+
+        .main-nav .dropdown-menu .dropdown-item {
+          padding-left: 2rem;
+        }
+
+        .main-nav .dropdown:hover .dropdown-menu,
+        .main-nav .dropdown:focus .dropdown-menu,
+        .main-nav .dropdown-menu.show {
+          display: block;
+        }
+      }
+    </style>
 </body>
 
 </html>
