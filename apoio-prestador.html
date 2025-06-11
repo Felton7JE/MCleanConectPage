@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Quero Apoio - MCleanConnect</title>
+  <meta name="description" content="Solicite apoio para atuar como prestador de serviços na MCleanConnect.">
+  <meta name="author" content="MCleanConnect">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/templatemo-chain-app-dev.css">
+  <link rel="stylesheet" href="assets/css/animated.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  <style>
+    .main {
+      padding-top: 120px !important;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <a href="index.html" class="logo">
+              <img src="assets/images/logo.png" alt="MCleanConnect">
+            </a>
+            <ul class="nav">
+              <li><a href="index.html#top">Home</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Funcionalidades</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="index.html#servicos-disponiveis">Serviços</a></li>
+                  <li><a class="dropdown-item" href="index.html#cadastro-encontre">Cadastre-se</a></li>
+                </ul>
+              </li>
+              <li><a href="index.html#about">Sobre Nós</a></li>
+              <li><a href="index.html#contact">Contato</a></li>
+            </ul>
+            <a class='menu-trigger d-lg-none d-block'>
+              <span>Menu</span>
+            </a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="main py-5" style="background: #f8f9fa; min-height: 100vh; padding-top: 120px;">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-lg-7">
+          <div class="section-heading text-center wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+            <h2 class="mb-2">Tem habilidade, mas falta estrutura?</h2>
+            <img src="assets/images/heading-line-dec.png" alt="">
+            <p class="mb-4">Preencha o formulário abaixo para solicitar apoio e impulsionar sua carreira de prestador de serviços.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center align-items-center">
+        <div class="col-lg-7">
+          <div class="card service-item third-service text-center p-4 shadow-sm rounded bg-white border-0">
+            <form id="apoioForm">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="apoioNome" class="form-label">Nome completo</label>
+                  <input type="text" class="form-control" id="apoioNome" name="nome" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="apoioContato" class="form-label">Contato (WhatsApp ou telefone)</label>
+                  <input type="text" class="form-control" id="apoioContato" name="contato" required inputmode="numeric" pattern="[0-9]+" title="Digite apenas números">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="apoioLocalizacao" class="form-label">Localização (bairro/cidade)</label>
+                  <input type="text" class="form-control" id="apoioLocalizacao" name="localizacao" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="apoioServico" class="form-label">Tipo de serviço que consegue prestar</label>
+                  <input type="text" class="form-control" id="apoioServico" name="servico" placeholder="Ex: Limpeza, pintura, jardinagem..." required>
+                </div>
+                <div class="col-12 mb-3">
+                  <label for="apoioDescricao" class="form-label">Sobre você e sua experiência</label>
+                  <textarea class="form-control" id="apoioDescricao" name="descricao" rows="2" placeholder="Conte um pouco sobre sua experiência, área de atuação, etc." required></textarea>
+                </div>
+                <div class="col-12 mb-3">
+                  <label for="apoioAjuda" class="form-label">Que tipo de ajuda você precisa?</label>
+                  <textarea class="form-control" id="apoioAjuda" name="ajuda" rows="2" placeholder="Ex: Equipamentos, divulgação, capacitação, etc." required></textarea>
+                </div>
+              </div>
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary btn-lg gradient-button">Enviar Solicitação</button>
+              </div>
+            </form>
+            <div id="apoioMsg" class="alert alert-success mt-3 d-none" role="alert">
+              Solicitação enviada com sucesso! Entraremos em contato em breve.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading">
+            <h4>"Que tal fazer parte desta causa? Torne-se um parceiro ou financiador e ajude a transformar o nosso País!"</h4>
+          </div>
+        </div>
+        <div class="col-lg-6 offset-lg-3">
+          <form id="search" action="#" method="GET">
+            <div class="row">
+              <div class="col-lg-6 col-sm-6">
+                <fieldset>
+                  <input type="email" name="email" class="email" placeholder="Seu melhor email..." autocomplete="on" required>
+                </fieldset>
+              </div>
+              <div class="col-lg-6 col-sm-6">
+                <fieldset>
+                  <button type="submit" class="main-button">Quero me conectar! <i class="fa fa-angle-right"></i></button>
+                </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="footer-widget">
+            <h4>Fale Conosco</h4>
+            <p>MCleanConnect, Mozambique</p>
+            <p><a href="tel:+258845120809">+258 84 512 0809</a></p>
+            <p><a href="tel:+258861592239">+258861592239</a></p>
+            <p><a href="mailto:contato@MCleanConnect.com.br">contato@MCleanConnect.com.br</a></p>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="footer-widget">
+            <h4>Páginas</h4>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#features">Funcionalidades</a></li>
+              <li><a href="index.html#about">Sobre Nós</a></li>
+              <li><a href="index.html#contact">Contato</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="footer-widget">
+            <h4>Links Úteis</h4>
+            <ul>
+              <li><a href="#">Termos de Serviço</a></li>
+              <li><a href="#">Política de Privacidade</a></li>
+              <li><a href="#">Central de Ajuda</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="footer-widget">
+            <p>Conectamos você aos melhores profissionais e serviços, com qualidade e segurança.</p>
+            <h4>Siga-nos</h4>
+            <ul class="social-icons">
+              <li><a href="https://www.facebook.com/people/MCleanConnect/61575770738523/" target="_blank">Facebook</a></li>
+              <li><a href="https://www.youtube.com/playlist?list=PLfnbdLNx0P2ofyfR0K4peWuFYRktqcXi1" target="_blank">YouTube</a></li>
+              <li><a href="https://wa.me/258845120809" target="_blank">WhatsApp</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="copyright-text">
+            <p>Copyright © 2025 MCleanConnect. Todos os direitos reservados.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById('apoioForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('apoioMsg').classList.remove('d-none');
+      document.getElementById('apoioForm').reset();
+    });
+  </script>
+</body>
+</html>

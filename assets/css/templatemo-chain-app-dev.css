@@ -2216,3 +2216,43 @@ responsive
     padding: 30px;
   }
 }
+
+/* Ajustes de fontes para responsividade mobile */
+@media (max-width: 575.98px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+  h4 { font-size: 1.1rem; }
+  h5 { font-size: 1rem; }
+  h6 { font-size: 0.95rem; }
+  p, li, .section-heading p, .service-item p, .about-us .box-item p, .footer-widget p, .footer-widget ul li a {
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+  .gradient-button a, .white-button a, .border-button a, .btn, .btn_red {
+    font-size: 0.98rem !important;
+    padding: 9px 16px !important;
+  }
+  .main-banner .left-content h2 {
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+  }
+  .section-heading h4 {
+    font-size: 1.2rem;
+  }
+  .service-item h4, .about-us .box-item h4 a, .footer-widget h4 {
+    font-size: 1.05rem;
+  }
+  .pricing-item-regular span.price, .pricing-item-pro span.price {
+    font-size: 1.5rem;
+  }
+  .header-area .main-nav .logo h4 {
+    font-size: 1.2rem;
+  }
+  .the-clients .nacc .thumb .client-content p {
+    font-size: 1rem;
+  }
+  .popupHeader, .social_login .icon_title {
+    font-size: 1rem;
+  }
+}
