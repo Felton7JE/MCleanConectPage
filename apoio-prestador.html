@@ -59,25 +59,29 @@
       <div class="row">
         <div class="col-12">
           <nav class="main-nav" aria-label="Navegação principal">
+            <!-- ***** Logo Start ***** -->
             <a href="index.html" class="logo">
               <img src="assets/images/logo.png" alt="Logo MCLEANCONNECT - Plataforma de Serviços" loading="lazy">
             </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li><a href="index.html#top">Home</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Funcionalidades</a>
+              <li class="scroll-to-section"><a href="index.html#top">Home</a></li>
+              <li class="scroll-to-section dropdown">
+                <a href="index.html#features" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Funcionalidades</a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="index.html#servicos-disponiveis">Serviços</a></li>
                   <li><a class="dropdown-item" href="index.html#cadastro-encontre">Cadastre-se</a></li>
                   <li><a class="dropdown-item" href="apoio-prestador.html">Quero Apoio</a></li>
                 </ul>
               </li>
-              <li><a href="index.html#about">Sobre Nós</a></li>
-              <li><a href="index.html#contact">Contato</a></li>
+              <li class="scroll-to-section"><a href="index.html#about">Sobre Nós</a></li>
+              <li class="scroll-to-section"><a href="index.html#contact">Contato</a></li>
             </ul>
             <a class='menu-trigger d-lg-none d-block'>
               <span>Menu</span>
             </a>
+            <!-- ***** Menu End ***** -->
           </nav>
         </div>
       </div>
@@ -219,8 +223,37 @@
   </main>
 
   <!-- Scripts -->
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script>
+    // Força o menu mobile funcionar corretamente
+    $(document).ready(function () {
+      // Menu hamburguer mobile
+      $(document).off('click.menuTrigger');
+      $(document).on('click.menuTrigger', '.menu-trigger', function() {
+        $(this).toggleClass('active');
+        $('.header-area .nav').slideToggle(200);
+      });
+      // Dropdown mobile
+      function handleMobileDropdown() {
+        if ($(window).width() < 992) {
+          $('.main-nav .dropdown > a').off('click.mobileDropdown');
+          $('.main-nav .dropdown > a').on('click.mobileDropdown', function(e) {
+            e.preventDefault();
+            var $parent = $(this).parent();
+            $parent.toggleClass('open');
+            $parent.children('.dropdown-menu').stop(true, true).slideToggle(200);
+          });
+        } else {
+          $('.main-nav .dropdown').removeClass('open');
+          $('.main-nav .dropdown-menu').removeAttr('style');
+          $('.main-nav .dropdown > a').off('click.mobileDropdown');
+        }
+      }
+      handleMobileDropdown();
+      $(window).on('resize', handleMobileDropdown);
+    });
+    // Formulário de apoio
     document.getElementById('apoioForm').addEventListener('submit', function(e) {
       e.preventDefault();
       document.getElementById('apoioMsg').classList.remove('d-none');

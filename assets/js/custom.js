@@ -195,6 +195,29 @@ $(function() {
     });
   }
 
+  // Corrige dropdown para mobile sem bugs
+  function handleMobileDropdown() {
+    if ($(window).width() < 992) {
+      // Remove eventos antigos para evitar duplicidade
+      $('.main-nav .dropdown > a').off('click.mobileDropdown');
+      $('.main-nav .dropdown > a').on('click.mobileDropdown', function(e) {
+        e.preventDefault();
+        var $parent = $(this).parent();
+        $parent.toggleClass('open');
+        $parent.children('.dropdown-menu').stop(true, true).slideToggle(200);
+      });
+    } else {
+      // Remove classes e eventos mobile ao voltar para desktop
+      $('.main-nav .dropdown').removeClass('open');
+      $('.main-nav .dropdown-menu').removeAttr('style');
+      $('.main-nav .dropdown > a').off('click.mobileDropdown');
+    }
+  }
+
+  $(document).ready(function () {
+    handleMobileDropdown();
+    $(window).on('resize', handleMobileDropdown);
+  });
 
 
 
