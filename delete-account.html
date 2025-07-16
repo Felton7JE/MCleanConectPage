@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Account Deletion - MCLeanConnect</title>
+  <meta name="description" content="Request deletion of your MCLeanConnect app account quickly and securely. Developed by nobody_dev.">
+  <meta name="keywords" content="MCLeanConnect, account deletion, delete account, nobody_dev, remove data">
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/templatemo-chain-app-dev.css">
+  <link rel="stylesheet" href="assets/css/animated.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  <style>
+    body { background: #f8f9fa; }
+    .main { padding-top: 120px !important; }
+    .card { border-radius: 16px; }
+    h1, h2, h3, h4 { color: #2a2a2a; }
+    .alert-warning { border-left: 5px solid #ffc107; }
+    .alert-info { border-left: 5px solid #0dcaf0; }
+    .btn-danger { background: #dc3545; border-color: #dc3545; }
+    .btn-danger:hover { background: #c82333; border-color: #bd2130; }
+    .highlight-box { 
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+      color: white; 
+      padding: 2rem; 
+      border-radius: 15px; 
+      margin: 2rem 0; 
+    }
+    .step-card {
+      border: 2px solid #e9ecef;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      transition: all 0.3s ease;
+    }
+    .step-card:hover {
+      border-color: #667eea;
+      box-shadow: 0 4px 8px rgba(102, 126, 234, 0.1);
+    }
+    .step-number {
+      background: #667eea;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      margin-right: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="header-area header-sticky">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <a href="index.html" class="logo">
+              <img src="assets/images/logo.png" alt="MCLEANCONNECT Logo" loading="lazy">
+            </a>
+            <ul class="nav">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#features">Features</a></li>
+              <li><a href="index.html#about">About Us</a></li>
+              <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <a class='menu-trigger d-lg-none d-block'><span>Menu</span></a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="card p-4 shadow-sm bg-white border-0">
+            <div class="text-center mb-4">
+              <h1 class="display-5 fw-bold text-primary">Account Deletion</h1>
+              <p class="lead"><strong>MCLeanConnect</strong> Application</p>
+              <p class="text-muted">Developed by <strong>nobody_dev</strong></p>
+            </div>
+
+            <div class="highlight-box text-center">
+              <h3 class="mb-3">🗑️ Account Deletion Request</h3>
+              <p class="mb-0">This page allows you to request complete deletion of your MCLeanConnect app account, including all your personal data.</p>
+            </div>
+
+            <!-- Important Alert -->
+            <div class="alert alert-warning" role="alert">
+              <h5 class="alert-heading"><i class="bi bi-exclamation-triangle-fill"></i> Important!</h5>
+              <p>Account deletion is <strong>PERMANENT</strong> and cannot be undone. All your data, profile, service history, and personal information will be permanently removed from the MCLeanConnect application.</p>
+            </div>
+
+            <!-- What will be deleted -->
+            <div class="row mb-4">
+              <div class="col-md-6">
+                <div class="card border-danger">
+                  <div class="card-header bg-danger text-white">
+                    <h5 class="mb-0"><i class="bi bi-trash"></i> Data to be DELETED</h5>
+                  </div>
+                  <div class="card-body">
+                    <ul class="list-unstyled">
+                      <li>✗ Profile information (name, photo, phone)</li>
+                      <li>✗ Email and contact data</li>
+                      <li>✗ Service request/provision history</li>
+                      <li>✗ Reviews and comments</li>
+                      <li>✗ Conversations and messages</li>
+                      <li>✗ Location data</li>
+                      <li>✗ Preferences and settings</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card border-info">
+                  <div class="card-header bg-info text-white">
+                    <h5 class="mb-0"><i class="bi bi-shield-check"></i> Data RETAINED (Anonymous)</h5>
+                  </div>
+                  <div class="card-body">
+                    <ul class="list-unstyled">
+                      <li>✓ General statistics (without identification)</li>
+                      <li>✓ Aggregated data for app improvements</li>
+                      <li>✓ Information necessary for legal compliance</li>
+                    </ul>
+                    <small class="text-muted">This data cannot be linked to you after deletion.</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Steps for Deletion -->
+            <h3 class="text-center mb-4">How to Request Account Deletion</h3>
+            
+            <div class="step-card">
+              <div class="d-flex align-items-center">
+                <div class="step-number">1</div>
+                <div>
+                  <h5>Fill Out the Form Below</h5>
+                  <p class="mb-0">Complete the form with your information so we can identify your MCLeanConnect account.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="step-card">
+              <div class="d-flex align-items-center">
+                <div class="step-number">2</div>
+                <div>
+                  <h5>Email Confirmation</h5>
+                  <p class="mb-0">You will receive a confirmation email at the address registered to your account.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="step-card">
+              <div class="d-flex align-items-center">
+                <div class="step-number">3</div>
+                <div>
+                  <h5>Request Processing</h5>
+                  <p class="mb-0">Your account will be deleted within <strong>30 business days</strong> after confirmation.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Deletion Form -->
+            <div class="card border-primary mt-4">
+              <div class="card-header bg-primary text-white">
+                <h4 class="mb-0"><i class="bi bi-person-x"></i> Account Deletion Form</h4>
+              </div>
+              <div class="card-body">
+                <form id="deletionForm">
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label for="fullName" class="form-label">Full Name *</label>
+                      <input type="text" class="form-control" id="fullName" name="fullName" required>
+                      <div class="form-text">Name registered in the MCLeanConnect app</div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="accountEmail" class="form-label">Account Email *</label>
+                      <input type="email" class="form-control" id="accountEmail" name="accountEmail" required>
+                      <div class="form-text">Email used to log into the app</div>
+                    </div>
+                  </div>
+                  
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label for="phone" class="form-label">Phone</label>
+                      <input type="tel" class="form-control" id="phone" name="phone">
+                      <div class="form-text">Phone registered to the account (optional)</div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="accountType" class="form-label">Account Type *</label>
+                      <select class="form-select" id="accountType" name="accountType" required>
+                        <option value="">Select...</option>
+                        <option value="client">Client (Request services)</option>
+                        <option value="provider">Service Provider</option>
+                        <option value="both">Both (Client and Provider)</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="deletionReason" class="form-label">Reason for Deletion</label>
+                    <select class="form-select" id="deletionReason" name="deletionReason">
+                      <option value="">Select reason (optional)</option>
+                      <option value="no_longer_use">No longer use the app</option>
+                      <option value="privacy_concerns">Privacy concerns</option>
+                      <option value="bad_experience">Bad experience with the app</option>
+                      <option value="location_change">Location change</option>
+                      <option value="other">Other reason</option>
+                    </select>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="comments" class="form-label">Additional Comments</label>
+                    <textarea class="form-control" id="comments" name="comments" rows="3" placeholder="Leave any additional comments here (optional)"></textarea>
+                  </div>
+
+                  <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="confirmDeletion" name="confirmDeletion" required>
+                    <label class="form-check-label" for="confirmDeletion">
+                      <strong>I confirm that I understand this action is irreversible and all my data will be permanently deleted from MCLeanConnect.</strong>
+                    </label>
+                  </div>
+
+                  <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-danger btn-lg">
+                      <i class="bi bi-trash"></i> Request Account Deletion
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!-- Alternatives -->
+            <div class="alert alert-info mt-4" role="alert">
+              <h5 class="alert-heading"><i class="bi bi-lightbulb"></i> Alternatives to Deletion</h5>
+              <p>Before deleting your account, consider these options:</p>
+              <ul class="mb-0">
+                <li><strong>Temporarily deactivate:</strong> Pause your account without losing data</li>
+                <li><strong>Change privacy settings:</strong> Limit data sharing</li>
+                <li><strong>Contact support:</strong> Resolve specific issues without deleting account</li>
+              </ul>
+              <div class="mt-3">
+                <a href="index.html#contact" class="btn btn-outline-info">Contact Support</a>
+              </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="card border-secondary mt-4">
+              <div class="card-header">
+                <h5 class="mb-0">Need Help?</h5>
+              </div>
+              <div class="card-body">
+                <p>If you have questions about the deletion process or need assistance:</p>
+                <ul class="list-unstyled">
+                  <li><i class="bi bi-envelope"></i> <strong>Email:</strong> <a href="mailto:mcleanconnect@gmail.com">mcleanconnect@gmail.com</a></li>
+                  <li><i class="bi bi-phone"></i> <strong>Phone:</strong> <a href="tel:+258845120809">+258 84 512 0809</a></li>
+                  <li><i class="bi bi-whatsapp"></i> <strong>WhatsApp:</strong> <a href="https://wa.me/258845120809" target="_blank">+258 84 512 0809</a></li>
+                </ul>
+                <small class="text-muted">Support hours: Monday to Friday, 8am to 5pm (GMT+2)</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="footer-widget">
+            <h4>Contact Us</h4>
+            <p>MCLeanConnect, Mozambique, Beira</p>
+            <p><a href="tel:+258845120809">+258 84 512 0809</a></p>
+            <p><a href="tel:+258861592239">+258 86 159 2239</a></p>
+            <p><a href="mailto:mcleanconnect@gmail.com">mcleanconnect@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="footer-widget">
+            <h4>Pages</h4>
+            <ul>
+              <li><a href="index.html#top">Home</a></li>
+              <li><a href="index.html#features">Features</a></li>
+              <li><a href="index.html#about">About Us</a></li>
+              <li><a href="index.html#contact">Contact</a></li>
+              <li><a href="index.html#video">Videos</a></li>
+              <li><a href="index.html#comments">Comments</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="footer-widget">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><a href="terms-of-use.html">Terms of Use</a></li>
+              <li><a href="privacy-policy.html">Privacy Policy</a></li>
+              <li><a href="delete-account.html">Account Deletion</a></li>
+              <li><a href="apoio-prestador.html">Help Center</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="footer-widget">
+            <p>We connect you to the best professionals and services, with quality and safety.</p>
+            <h4>Follow Us</h4>
+            <ul class="social-icons">
+              <li><a href="https://www.facebook.com/profile.php?id=61575770738523" target="_blank">Facebook</a></li>
+              <li><a href="https://www.instagram.com/mcleanconnect?igsh=MWdjcHI1Y2liZHo1bQ==" target="_blank">Instagram</a></li>
+              <li><a href="https://chat.whatsapp.com/H5waUHiDo0jElUsbgrjOEw" target="_blank">WhatsApp</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="copyright-text">
+            <p>Copyright © 2025 MCLeanConnect. All rights reserved. | Developed by <strong>nobody_dev</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="vendor/jquery/jquery.min.js" defer></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="assets/js/owl-carousel.js" defer></script>
+  <script src="assets/js/animation.js" defer></script>
+  <script src="assets/js/imagesloaded.js" defer></script>
+  <script src="assets/js/popup.js" defer></script>
+  <script src="assets/js/custom.js" defer></script>
+
+  <script>
+    // Account Deletion Form
+    document.getElementById('deletionForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Validation
+      const fullName = document.getElementById('fullName').value.trim();
+      const accountEmail = document.getElementById('accountEmail').value.trim();
+      const accountType = document.getElementById('accountType').value;
+      const confirmDeletion = document.getElementById('confirmDeletion').checked;
+      
+      if (!fullName || !accountEmail || !accountType || !confirmDeletion) {
+        alert('Please fill in all required fields and confirm that you understand the consequences of deletion.');
+        return;
+      }
+      
+      // Collect form data
+      const formData = {
+        fullName: fullName,
+        accountEmail: accountEmail,
+        phone: document.getElementById('phone').value.trim(),
+        accountType: accountType,
+        deletionReason: document.getElementById('deletionReason').value,
+        comments: document.getElementById('comments').value.trim(),
+        requestDate: new Date().toLocaleString('en-US'),
+        confirmDeletion: confirmDeletion
+      };
+      
+      // Simulate sending (here you would integrate with your backend)
+      console.log('Deletion request:', formData);
+      
+      // Create request email
+      const subject = encodeURIComponent('Account Deletion Request - MCLeanConnect');
+      const body = encodeURIComponent(`
+ACCOUNT DELETION REQUEST - MCLEANCONNECT
+Developed by: nobody_dev
+
+=== REQUESTER DATA ===
+Full Name: ${formData.fullName}
+Account Email: ${formData.accountEmail}
+Phone: ${formData.phone || 'Not provided'}
+Account Type: ${formData.accountType}
+
+=== REQUEST DETAILS ===
+Deletion Reason: ${formData.deletionReason || 'Not specified'}
+Comments: ${formData.comments || 'No additional comments'}
+Request Date: ${formData.requestDate}
+
+=== CONFIRMATION ===
+User confirms understanding that this action is irreversible: ${confirmDeletion ? 'YES' : 'NO'}
+
+Please process this account deletion request according to MCLeanConnect privacy policy.
+
+---
+This request was automatically generated through the official website.
+      `);
+      
+      // Open email client
+      window.location.href = `mailto:mcleanconnect@gmail.com?subject=${subject}&body=${body}`;
+      
+      // Show success message
+      alert('Your request has been prepared! Your email client will open to send the request. If it doesn\'t open automatically, copy the data and send manually to: mcleanconnect@gmail.com');
+      
+      // Reset form
+      this.reset();
+    });
+  </script>
+
+  <style>
+    /* Footer styles */
+    .footer-widget ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-widget ul li {
+      margin-bottom: 8px;
+    }
+
+    .footer-widget ul li a {
+      color: #fff;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      padding: 5px 0;
+      display: inline-block;
+    }
+
+    .footer-widget ul li a:hover {
+      color: #fba504;
+      padding-left: 10px;
+    }
+
+    /* Smooth navigation */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Adjust offset for fixed header navigation */
+    section {
+      scroll-margin-top: 80px;
+    }
+  </style>
+</body>
+</html>
