@@ -4,11 +4,12 @@ let client;
 let db;
 
 async function connectToDatabase() {
-  if (!client) {
-    client = new MongoClient(process.env.MONGODB_URI);
-    await client.connect();
-    db = client.db('mcleanconnect');
+  if (client && client.topology && client.topology.isConnected()) {
+    return client.db('mcleanconnect');
   }
+  client = new MongoClient(process.env.MONGODB_URI);
+  await client.connect();
+  db = client.db('mcleanconnect');
   return db;
 }
 
