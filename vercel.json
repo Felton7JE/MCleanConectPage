@@ -1,12 +1,16 @@
 {
   "functions": {
-    "api/*.js": {
-      "runtime": "@vercel/node"
+    "api/send-email.js": {
+      "runtime": "nodejs18.x"
+    },
+    "api/comments.js": {
+      "runtime": "nodejs18.x"
     }
   },
-  "env": {
-    "EMAIL_USER": "@email_user",
-    "EMAIL_PASS": "@email_pass",
-    "MONGODB_URI": "@mongodb_uri"
-  }
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
+    }
+  ]
 }

@@ -40,14 +40,14 @@
     "logo": "https://www.mcleanconnect.com/assets/images/logo.png",
     "contactPoint": [{
       "@type": "ContactPoint",
-      "telephone": "+258845120809",
+      "telephone": "+258875120809",
       "contactType": "customer service",
       "areaServed": "MZ"
     }],
     "sameAs": [
       "https://www.facebook.com/people/MCLEANCONNECT/61575770738523/",
       "https://www.youtube.com/playlist?list=PLfnbdLNx0P2ofyfR0K4peWuFYRktqcXi1",
-      "https://wa.me/258845120809"
+      "https://chat.whatsapp.com/H5waUHiDo0jElUsbgrjOEw"
     ]
   }
   </script>
@@ -173,7 +173,7 @@
             <div class="footer-widget">
               <h4>Fale Conosco</h4>
               <p>MCLEANCONNECT, Mozambique</p>
-              <p><a href="tel:+258845120809">+258 84 512 0809</a></p>
+              <p><a href="tel:+258845720809">+258 87 512 0809</a></p>
               <p><a href="tel:+258861592239">+258861592239</a></p>
               <p><a href="mailto:mcleanconnect@gmail.com">mcleanconnect@gmail.com</a></p>
             </div>
@@ -225,7 +225,6 @@
   <!-- Scripts -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/api-helpers.js"></script>
   <script>
     // Força o menu mobile funcionar corretamente
     $(document).ready(function () {
@@ -254,41 +253,11 @@
       handleMobileDropdown();
       $(window).on('resize', handleMobileDropdown);
     });
-
-    // Formulário de apoio com API
-    document.getElementById('apoioForm').addEventListener('submit', async function(e) {
+    // Formulário de apoio
+    document.getElementById('apoioForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      
-      const submitBtn = this.querySelector('button[type="submit"]');
-      const originalText = submitBtn.textContent;
-      submitBtn.textContent = 'Enviando...';
-      submitBtn.disabled = true;
-      
-      const formData = {
-        nome: document.getElementById('apoioNome').value,
-        contato: document.getElementById('apoioContato').value,
-        localizacao: document.getElementById('apoioLocalizacao').value,
-        servico: document.getElementById('apoioServico').value,
-        descricao: document.getElementById('apoioDescricao').value,
-        ajuda: document.getElementById('apoioAjuda').value
-      };
-
-      try {
-        const result = await sendEmail('support-request', formData);
-
-        if (result.success) {
-          document.getElementById('apoioMsg').classList.remove('d-none');
-          this.reset();
-        } else {
-          alert('Erro ao enviar solicitação. Tente novamente.');
-        }
-      } catch (error) {
-        console.error('Error:', error);
-        alert('Erro ao enviar solicitação. Tente novamente.');
-      } finally {
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-      }
+      document.getElementById('apoioMsg').classList.remove('d-none');
+      document.getElementById('apoioForm').reset();
     });
   </script>
 </body>

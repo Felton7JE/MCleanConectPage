@@ -1,23 +1,15 @@
 import { MongoClient } from 'mongodb';
 
-const uri = process.env.MONGODB_URI;
 let client;
-let clientPromise;
-
-if (process.env.NODE_ENV === 'development') {
-  if (!global._mongoClientPromise) {
-    client = new MongoClient(uri);
-    global._mongoClientPromise = client.connect();
-  }
-  clientPromise = global._mongoClientPromise;
-} else {
-  client = new MongoClient(uri);
-  clientPromise = client.connect();
-}
+let db;
 
 async function connectToDatabase() {
-  const client = await clientPromise;
-  return client.db('mcleanconnect');
+  if (!client) {
+    client = new MongoClient(process.env.MONGODB_URI);
+    await client.connect();
+    db = client.db('mcleanconnect');
+  }
+  return db;
 }
 
 export default async function handler(req, res) {
@@ -27,62 +19,74 @@ export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
   if (req.method === 'OPTIONS') {
-    return res.status(200).end();
+    res.status(200).end();
+    return;
   }
 
   try {
-    const db = await connectToDatabase();
-    const commentsCollection = db.collection('comments');
+    const database = await connectToDatabase();
+    const collection = database.collection('comments');
 
     if (req.method === 'GET') {
-      // Buscar comentários com paginação
       const page = parseInt(req.query.page) || 1;
       const limit = parseInt(req.query.limit) || 5;
       const skip = (page - 1) * limit;
 
-      const comments = await commentsCollection
+      const comments = await collection
         .find({})
         .sort({ createdAt: -1 })
         .skip(skip)
         .limit(limit)
         .toArray();
 
-      const total = await commentsCollection.countDocuments();
+      const total = await collection.countDocuments();
+      const totalPages = Math.ceil(total / limit);
+
+      const formattedComments = comments.map(comment => ({
+        name: comment.name,
+        text: comment.text,
+        date: comment.createdAt.toLocaleString('pt-BR', {
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit',
+          hour: '2-digit',
+          minute: '2-digit'
+        })
+      }));
 
       res.status(200).json({
-        comments,
-        total,
+        success: true,
+        comments: formattedComments,
         page,
-        totalPages: Math.ceil(total / limit)
+        totalPages,
+        total
       });
 
     } else if (req.method === 'POST') {
-      // Adicionar novo comentário
       const { name, text } = req.body;
 
       if (!name || !text) {
-        return res.status(400).json({ message: 'Nome e comentário são obrigatórios' });
+        return res.status(400).json({ 
+          success: false, 
+          message: 'Nome e comentário são obrigatórios' 
+        });
       }
 
-      const newComment = {
+      const comment = {
         name: name.trim(),
         text: text.trim(),
-        createdAt: new Date(),
-        date: new Date().toLocaleString('pt-BR')
+        createdAt: new Date()
       };
 
-      const result = await commentsCollection.insertOne(newComment);
-
-      res.status(201).json({
-        success: true,
-        comment: { ...newComment, _id: result.insertedId }
-      });
+      await collection.insertOne(comment);
+      res.status(201).json({ success: true, message: 'Comentário salvo com sucesso' });
 
     } else {
-      res.status(405).json({ message: 'Method not allowed' });
+      res.status(405).json({ success: false, message: 'Method not allowed' });
     }
+
   } catch (error) {
     console.error('Erro na API de comentários:', error);
-    res.status(500).json({ message: 'Erro interno do servidor' });
+    res.status(500).json({ success: false, message: 'Erro interno do servidor' });
   }
 }
