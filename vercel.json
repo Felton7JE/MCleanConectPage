@@ -1,0 +1,12 @@
+{
+  "functions": {
+    "api/*.js": {
+      "runtime": "@vercel/node"
+    }
+  },
+  "env": {
+    "EMAIL_USER": "@email_user",
+    "EMAIL_PASS": "@email_pass",
+    "MONGODB_URI": "@mongodb_uri"
+  }
+}

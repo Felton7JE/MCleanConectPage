@@ -680,84 +680,100 @@
     <script src="assets/js/imagesloaded.js" defer></script>
     <script src="assets/js/popup.js" defer></script>
     <script src="assets/js/custom.js" defer></script>
+    <script src="assets/js/api-helpers.js" defer></script>
     <script>
-      // Comments Pagination
-
-      const commentsPerPage = 5;
+      // Comments System with MongoDB
       let currentPage = 1;
-      let comments = JSON.parse(localStorage.getItem('mcleaComments') || '[]');
-
+      const commentsPerPage = 5;
+      
       const commentsList = document.getElementById('commentsList');
       const previousPageButton = document.getElementById('previousPage');
       const nextPageButton = document.getElementById('nextPage');
       const currentPageNumber = document.getElementById('currentPageNumber');
 
-      function displayComments() {
-        commentsList.innerHTML = '';
-        const startIndex = (currentPage - 1) * commentsPerPage;
-        const endIndex = startIndex + commentsPerPage;
-        const currentComments = comments.slice(startIndex, endIndex);
-
-        if (currentComments.length === 0 && comments.length === 0) {
-          commentsList.innerHTML = '<p class="text-muted">Nenhum comentário ainda. Seja o primeiro a comentar!</p>';
-        } else if (currentComments.length === 0) {
-          commentsList.innerHTML = '<p class="text-muted">Nenhum comentário nesta página.</p>';
-        } else {
-          currentComments.forEach(comment => {
-            const div = document.createElement('div');
-            div.className = 'mb-3 border-bottom pb-2';
-            div.innerHTML = `<strong>${comment.name}</strong><br><span class="text-muted small">${comment.date}</span><p class="mb-1">${comment.text}</p>`;
-            commentsList.appendChild(div);
-          });
+      async function displayComments() {
+        try {
+          const data = await loadComments(currentPage, commentsPerPage);
+          
+          commentsList.innerHTML = '';
+          
+          if (data.comments.length === 0 && currentPage === 1) {
+            commentsList.innerHTML = '<p class="text-muted">Nenhum comentário ainda. Seja o primeiro a comentar!</p>';
+          } else if (data.comments.length === 0) {
+            commentsList.innerHTML = '<p class="text-muted">Nenhum comentário nesta página.</p>';
+          } else {
+            data.comments.forEach(comment => {
+              const div = document.createElement('div');
+              div.className = 'mb-3 border-bottom pb-2';
+              div.innerHTML = `
+                <strong>${comment.name}</strong><br>
+                <span class="text-muted small">${comment.date}</span>
+                <p class="mb-1">${comment.text}</p>
+              `;
+              commentsList.appendChild(div);
+            });
+          }
+          
+          updatePaginationButtons(data.page, data.totalPages);
+        } catch (error) {
+          console.error('Erro ao carregar comentários:', error);
+          commentsList.innerHTML = '<p class="text-muted">Erro ao carregar comentários.</p>';
         }
       }
 
-      function updatePaginationButtons() {
-        previousPageButton.classList.toggle('disabled', currentPage === 1);
-        nextPageButton.classList.toggle('disabled', currentPage * commentsPerPage >= comments.length);
-        currentPageNumber.textContent = currentPage;
+      function updatePaginationButtons(page, totalPages) {
+        previousPageButton.classList.toggle('disabled', page === 1);
+        nextPageButton.classList.toggle('disabled', page >= totalPages);
+        currentPageNumber.textContent = page;
       }
 
       previousPageButton.addEventListener('click', () => {
         if (currentPage > 1) {
           currentPage--;
           displayComments();
-          updatePaginationButtons();
         }
       });
 
       nextPageButton.addEventListener('click', () => {
-        if (currentPage * commentsPerPage < comments.length) {
-          currentPage++;
-          displayComments();
-          updatePaginationButtons();
-        }
-      });
-      // Função para carregar comentários do localStorage
-      function loadComments() {
-        comments = JSON.parse(localStorage.getItem('mcleaComments') || '[]');
-        currentPage = 1; // Reset to the first page when loading comments
+        currentPage++;
         displayComments();
-        updatePaginationButtons();
+      });
 
-      }
-
-      // Função para salvar novo comentário
-      document.getElementById('commentForm').addEventListener('submit', function (e) {
+      // Comment Form
+      document.getElementById('commentForm').addEventListener('submit', async function(e) {
         e.preventDefault();
+        
         const name = document.getElementById('commentName').value.trim();
         const text = document.getElementById('commentText').value.trim();
+        
         if (!name || !text) return;
 
-        const date = new Date().toLocaleString('pt-BR');
-        comments.unshift({ name, text, date });
-        localStorage.setItem('mcleaComments', JSON.stringify(comments));
-        document.getElementById('commentForm').reset();
-        loadComments();
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Enviando...';
+        submitBtn.disabled = true;
+
+        try {
+          const result = await saveComment(name, text);
+          
+          if (result.success) {
+            this.reset();
+            currentPage = 1; // Voltar para primeira página
+            displayComments();
+          } else {
+            alert('Erro ao enviar comentário. Tente novamente.');
+          }
+        } catch (error) {
+          console.error('Erro:', error);
+          alert('Erro ao enviar comentário. Tente novamente.');
+        } finally {
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+        }
       });
 
       // Carregar comentários ao abrir a página
-      document.addEventListener('DOMContentLoaded', loadComments);
+      document.addEventListener('DOMContentLoaded', displayComments);
     </script>
     <script>
       // Exibe o campo de texto se o tipo for 'Outro'

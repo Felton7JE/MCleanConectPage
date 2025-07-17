@@ -225,6 +225,7 @@
   <!-- Scripts -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/api-helpers.js"></script>
   <script>
     // Força o menu mobile funcionar corretamente
     $(document).ready(function () {
@@ -253,11 +254,41 @@
       handleMobileDropdown();
       $(window).on('resize', handleMobileDropdown);
     });
-    // Formulário de apoio
-    document.getElementById('apoioForm').addEventListener('submit', function(e) {
+
+    // Formulário de apoio com API
+    document.getElementById('apoioForm').addEventListener('submit', async function(e) {
       e.preventDefault();
-      document.getElementById('apoioMsg').classList.remove('d-none');
-      document.getElementById('apoioForm').reset();
+      
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Enviando...';
+      submitBtn.disabled = true;
+      
+      const formData = {
+        nome: document.getElementById('apoioNome').value,
+        contato: document.getElementById('apoioContato').value,
+        localizacao: document.getElementById('apoioLocalizacao').value,
+        servico: document.getElementById('apoioServico').value,
+        descricao: document.getElementById('apoioDescricao').value,
+        ajuda: document.getElementById('apoioAjuda').value
+      };
+
+      try {
+        const result = await sendEmail('support-request', formData);
+
+        if (result.success) {
+          document.getElementById('apoioMsg').classList.remove('d-none');
+          this.reset();
+        } else {
+          alert('Erro ao enviar solicitação. Tente novamente.');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Erro ao enviar solicitação. Tente novamente.');
+      } finally {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }
     });
   </script>
 </body>

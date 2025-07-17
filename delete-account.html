@@ -291,10 +291,11 @@
   <script src="assets/js/imagesloaded.js" defer></script>
   <script src="assets/js/popup.js" defer></script>
   <script src="assets/js/custom.js" defer></script>
+  <script src="assets/js/api-helpers.js" defer></script>
 
   <script>
     // Account Deletion Form
-    document.getElementById('deletionForm').addEventListener('submit', function(e) {
+    document.getElementById('deletionForm').addEventListener('submit', async function(e) {
       e.preventDefault();
       
       // Validation
@@ -308,6 +309,12 @@
         return;
       }
       
+      // Show loading
+      const submitBtn = this.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<i class="bi bi-hourglass-split"></i> Sending...';
+      submitBtn.disabled = true;
+      
       // Collect form data
       const formData = {
         fullName: fullName,
@@ -320,43 +327,24 @@
         confirmDeletion: confirmDeletion
       };
       
-      // Simulate sending (here you would integrate with your backend)
-      console.log('Deletion request:', formData);
-      
-      // Create request email
-      const subject = encodeURIComponent('Account Deletion Request - MCLeanConnect');
-      const body = encodeURIComponent(`
-ACCOUNT DELETION REQUEST - MCLEANCONNECT
-Developed by: nobody_dev
+      try {
+        // Send email via API
+        const result = await sendEmail('account-deletion', formData);
 
-=== REQUESTER DATA ===
-Full Name: ${formData.fullName}
-Account Email: ${formData.accountEmail}
-Phone: ${formData.phone || 'Not provided'}
-Account Type: ${formData.accountType}
-
-=== REQUEST DETAILS ===
-Deletion Reason: ${formData.deletionReason || 'Not specified'}
-Comments: ${formData.comments || 'No additional comments'}
-Request Date: ${formData.requestDate}
-
-=== CONFIRMATION ===
-User confirms understanding that this action is irreversible: ${confirmDeletion ? 'YES' : 'NO'}
-
-Please process this account deletion request according to MCLeanConnect privacy policy.
-
----
-This request was automatically generated through the official website.
-      `);
-      
-      // Open email client
-      window.location.href = `mailto:mcleanconnect@gmail.com?subject=${subject}&body=${body}`;
-      
-      // Show success message
-      alert('Your request has been prepared! Your email client will open to send the request. If it doesn\'t open automatically, copy the data and send manually to: mcleanconnect@gmail.com');
-      
-      // Reset form
-      this.reset();
+        if (result.success) {
+          alert('Account deletion request sent successfully! You will receive a confirmation email shortly.');
+          this.reset();
+        } else {
+          throw new Error(result.message);
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Error sending request. Please try again or contact support directly.');
+      } finally {
+        // Restore button
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+      }
     });
   </script>
 
