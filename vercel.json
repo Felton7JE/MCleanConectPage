@@ -1,10 +1,6 @@
 {
   "functions": {
-    "api/send-email.js": {
-      "runtime": "vercel/node@20.x"
-    },
-    "api/comments.js": {
-      "runtime": "vercel/node@20.x"
-    }
+    "api/send-email.js": {},
+    "api/comments.js": {}
   }
 }
