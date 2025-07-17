@@ -4,7 +4,7 @@
       "maxDuration": 15
     },
     "api/comments.js": {
-      "maxDuration": 15
+      "maxDuration": 30
     }
   }
 }
