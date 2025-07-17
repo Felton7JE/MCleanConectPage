@@ -1,7 +1,7 @@
 {
   "functions": {
     "api/send-email.js": {
-      "maxDuration": 15
+      "maxDuration": 30
     },
     "api/comments.js": {
       "maxDuration": 30
